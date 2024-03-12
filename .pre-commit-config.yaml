@@ -1,0 +1,36 @@
+﻿repos:
+-   repo: https://github.com/psf/black
+    rev: '24.2.0'
+    hooks:
+    -   id: black
+    -   id: black-jupyter
+-   repo: https://github.com/PyCQA/flake8
+    rev: '7.0.0'
+    hooks:
+    -   id: flake8
+        args: ['--max-line-length=88', '--extend-ignore=E203,E501,W503', '--exclude=.venv']
+-   repo: https://github.com/PyCQA/isort
+    rev: '5.13.2'
+    hooks:
+    -   id: isort
+        args: ['--profile=black']
+-   repo: https://github.com/kynan/nbstripout
+    rev: '0.7.1'
+    hooks:
+    -   id: nbstripout
+-   repo: https://github.com/pycqa/pydocstyle
+    rev: '6.3.0'
+    hooks:
+    -   id: pydocstyle
+        args: ['--convention=google', '--add-ignore=D100,D101,D102,D103,D104,D105,D106,D107']
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 'v4.5.0'
+    hooks:
+    -   id: check-ast
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: https://github.com/sqlfluff/sqlfluff
+    rev: '3.0.0a6'
+    hooks:
+    -   id: sqlfluff-fix
+    -   id: sqlfluff-lint
