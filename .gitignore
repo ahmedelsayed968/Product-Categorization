@@ -131,3 +131,10 @@ debug.log
 # Files
 .DS_Store
 poetry.lock
+
+# Secret
+*secret*
+
+#data
+*.csv
+*.jpg
