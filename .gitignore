@@ -134,6 +134,7 @@ poetry.lock
 
 # Secret
 *secret*
+.env
 
 #data
 *.csv
