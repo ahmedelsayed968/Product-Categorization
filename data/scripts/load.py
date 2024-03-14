@@ -1,3 +1,5 @@
+import os
+
 import cv2
 import numpy as np
 import requests
@@ -20,6 +22,10 @@ def parse_image_content(image_content: bytes) -> np.array:
 
 
 def save_cvimage(image: np.array, file_name: str, extension="jpg") -> bool:
+    directory = os.path.dirname(file_name + "." + extension)
+    if not os.path.exists(directory):
+        os.mkdir(directory)
+
     res = cv2.imwrite(f"{file_name}.{extension}", image)
     return res
 
